@@ -3,12 +3,12 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
-// считываем данные с консоли число А
+// считываем данные с консоли 2 числа
 string? inputNumA = Console.ReadLine();
-// считываем данные с консоли число B
 string? inputNumB = Console.ReadLine();
+
 // проверяем не пустые ли данные
-if (inputNumA != null && inputNumB != null)
+if ((inputNumA != null) && (inputNumB != null))
 {
     //парсим введеные числа
     int numberA = int.Parse(inputNumA);
@@ -19,10 +19,14 @@ if (inputNumA != null && inputNumB != null)
     {
         // выводим значение
        Console.WriteLine("число 1 больше 2");
+       
+       // Как вывести число?
+       //Console.WriteLine("max: "+ numberA);
     }
     else
     {
-       Console.WriteLine("число 2 больше 1"); 
+       Console.WriteLine("число 2 больше 1");
+       //Console.WriteLine("max: "+ numberB);
     }
 }
 

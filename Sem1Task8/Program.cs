@@ -14,14 +14,16 @@ if (inputNum != null)
     //вводим переменную
     string ResultNumLine = string.Empty;
 
-     for (int i = 2; i < number; i= i+2)
+     for (int i = 2; i <= number; i= i+2)
      {
         ResultNumLine = ResultNumLine + i + ", ";
-     }
+     }   
+     
      if(number%2 == 0)
      {
        ResultNumLine=ResultNumLine + number;
      }
+     
 Console.WriteLine(ResultNumLine);
 
 }

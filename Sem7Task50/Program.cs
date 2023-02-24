@@ -16,6 +16,7 @@ int InputNum(string msg)
 
 int[,] Gen2DArr(int xlen, int ylen)
 {
+    //Random random = new Random();
     int[,] arr = new int[ylen, xlen];
     for (int i = 0; i < ylen; i++)
     {
@@ -27,7 +28,7 @@ int[,] Gen2DArr(int xlen, int ylen)
     return arr;
 }
 
-void Print2DArr(int[,] arr)
+void Print2DArr(int[,] arr,int elem)
 {
     for (int i = 0; i <= arr.GetLength(0); i++)
     {
@@ -67,16 +68,23 @@ int xlen = InputNum("Ваше число столбцов: ");
 int ylen = InputNum("Ваше число строк: ");
 int elem = InputNum("Введите элемент для поиска: ");
 
-Random random = new Random();
+//Random random = new Random();
 int[,] arr = Gen2DArr(ylen, xlen);
 
-Print2DArr(arr);
+Print2DArr(arr, elem);
 
 SerchElem(arr, elem);
 
-//Console.WriteLine(SerchElem1);
+// Console.WriteLine(SerchElem);
 // Console.ReadLine();
 
+// SerchElem(
+//     Gen2DArr(
+//         InputNum("Введите число колонок: "),
+//         InputNum("Введите искомое строк: ")
+//         ), 
+//             InputNum("Введите искомое число: ")
+//             );
 
         
     

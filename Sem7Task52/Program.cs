@@ -70,10 +70,11 @@ int xlen = InputNum("Ваше число столбцов: ");
 int ylen = InputNum("Ваше число строк: ");
 
 
-int[,] arr = Gen2DArr(ylen, xlen);
+int[,] arr = Gen2DArr(5, 7, 1, 6);
 
-Print2DArr(MeanColom);
+Print1DArr(MeanColom);
 
-//nt SerchElem1 = SerchElem(arr);
 
-//Console.WriteLine(SerchElem1);
+Print2DArr(arr);
+Console.WriteLine("Ср. арефм из главной " + MeanColom(arr, true));
+Console.WriteLine("Ср. арефм из побочной  " + MeanColom(arr, false));

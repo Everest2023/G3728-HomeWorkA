@@ -7,6 +7,8 @@
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
 
+
+
 int InputNum(string msg)
 {
     Console.Write(msg);
@@ -20,7 +22,7 @@ int[,] Gen2DArr(int xlen, int ylen)
     {
         for (int j = 0; j < xlen; j++)
         {
-            arr[i, j] = j+i;
+            arr[i, j] = new Random().Next(0, 10);
         }
     }
     return arr;
@@ -28,9 +30,9 @@ int[,] Gen2DArr(int xlen, int ylen)
 
 void Print2DArr(int[,] arr)
 {
-    for (int i = 0; i <= arr.GetLength(0); i++)
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j <= arr.GetLength(1); j++)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
             Console.Write(arr[i, j] + "\t");
         }
@@ -38,7 +40,7 @@ void Print2DArr(int[,] arr)
     }
 }
 
-void Print1DArr(int[] MeanColom)
+void Print1DArr(double[] arr)
 {
     Console.Write("[");
     for (int i = 0; i < arr.Length - 1; i++)
@@ -49,17 +51,17 @@ void Print1DArr(int[] MeanColom)
 }
 
 
-int[] MeanColom(int[,] arr)
+double[] MeanColom(int[,] arr)
 
 {  
-   int [means] = new int[GetLength(0)];
-   for(int i = 0; i <= arr.GetLength(1); i++)
+   double[] means = new double [arr.GetLength(1)];
+   for(int i = 0; i < arr.GetLength(1); i++)
     {  
-        for(int j = 0; j <= arr.GetLength(0); j++)
+        for(int j = 0; j < arr.GetLength(0); j++)
         {
-            means[i]+= arr[j,i];
+            means[i]+= (double)arr[j,i];
         }
-        means[i] = means[i]/arr.GetLength(0);
+        means[i] = (double)(means[i]/(double)arr.GetLength(0));
     } 
     return means;
 }
@@ -70,11 +72,9 @@ int xlen = InputNum("Ваше число столбцов: ");
 int ylen = InputNum("Ваше число строк: ");
 
 
-int[,] arr = Gen2DArr(5, 7, 1, 6);
+int[,] arr = Gen2DArr(5,7);
 
-Print1DArr(MeanColom);
+Print1DArr(MeanColom(arr));
 
 
 Print2DArr(arr);
-Console.WriteLine("Ср. арефм из главной " + MeanColom(arr, true));
-Console.WriteLine("Ср. арефм из побочной  " + MeanColom(arr, false));
